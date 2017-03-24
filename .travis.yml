@@ -12,7 +12,7 @@ env:
     - CATKIN_PARALLEL_JOBS="-p4 --cmake-args -DCMAKE_BUILD_TYPE=Release -ENABLE_MQ=ON -DENABLE_CORBA=ON --"
     - ROS_PARALLEL_JOBS="-j4"
     - DOCKER_RUN_OPTS="-v $HOME/install:/root/catkin_ws/install"
-    - ADDITIONAL_DEBS="ccache"
+    - ADDITIONAL_DEBS="curl"
     
   matrix:
     - ROS_DISTRO="indigo"
