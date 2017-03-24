@@ -14,7 +14,7 @@ mkdir -p $HOME/catkin_ws/install
 
 curl -L $latest_release_url | tar xz -C $HOME/catkin_ws/install
 # Avoid duplicates
-rm $HOME/catkin_ws/install/share/industrial_ci
+rm -rf $HOME/catkin_ws/install/share/industrial_ci
 
 cd /root/catkin_ws
 catkin config --extend $HOME/catkin_ws/install
