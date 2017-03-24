@@ -9,7 +9,7 @@ env:
     - ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu
     - BEFORE_SCRIPT="source <(curl -s https://raw.githubusercontent.com/ahoarau/rtt_ros_integration-build/master/get_latest_orocos_toolchain.sh)"
     - NOT_TEST_BUILD=true
-    - CATKIN_PARALLEL_JOBS="-p4 --cmake-args -DCMAKE_BUILD_TYPE=Release -ENABLE_MQ=ON -DENABLE_CORBA=ON --"
+    - CATKIN_PARALLEL_JOBS="-p4 --cmake-args -DCMAKE_BUILD_TYPE=Release -DENABLE_MQ=ON -DENABLE_CORBA=ON --"
     - ROS_PARALLEL_JOBS="-j4"
     - DOCKER_RUN_OPTS="-v $HOME/install:/root/catkin_ws/install"
     - ADDITIONAL_DEBS="curl"
