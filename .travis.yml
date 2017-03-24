@@ -24,7 +24,7 @@ install:
   - git clone https://github.com/ipa-mdl/industrial_ci -b fix/install-space .ci_config
 script:
   - mkdir $HOME/install
-  - source .ci_config/travis.sh
+  - travis_wait 30 source .ci_config/travis.sh
   - tar -czf $HOME/rtt_ros_integration-2.9-$ROS_DISTRO-$(uname -m)-$(lsb_release -cs)-release.tar.gz -C $HOME/install/ .
 
 deploy:
