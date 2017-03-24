@@ -12,13 +12,12 @@ echo "Latest URL : $latest_release_url"
 
 mkdir -p $HOME/orocos_toolchain-install
 
-curl -L $latest_release_url | tar xvz -C $HOME/orocos_toolchain-install
-
+curl -L $latest_release_url | tar xz -C $HOME/orocos_toolchain-install
 
 cd /root/catkin_ws
 catkin config --extend $HOME/orocos_toolchain-install
 
-
+source $HOME/orocos_toolchain-install/setup.bash
 
 
 
