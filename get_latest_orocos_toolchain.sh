@@ -18,6 +18,7 @@ rm -r $HOME/catkin_ws/install/share/industrial_ci
 
 cd /root/catkin_ws
 catkin config --extend $HOME/catkin_ws/install
+catkin clean -y
 
 echo "ROS env : $(env | grep ROS)"
 
