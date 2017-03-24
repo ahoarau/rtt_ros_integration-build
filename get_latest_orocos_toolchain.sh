@@ -17,9 +17,4 @@ curl -L $latest_release_url | tar xz -C $HOME/orocos_toolchain-install
 cd /root/catkin_ws
 catkin config --extend $HOME/orocos_toolchain-install
 
-echo "Before source $ROS_PACKAGE_PATH"
-source $HOME/orocos_toolchain-install/setup.bash
-echo "After  source $ROS_PACKAGE_PATH"
-rospack profile
-
 
