@@ -8,13 +8,15 @@ cd $HOME
 
 latest_release_url=$(curl -s https://api.github.com/repos/ahoarau/orocos_toolchain-build/releases | grep $latest_tag | grep browser_download_url | cut -d '"' -f 4 | grep $ROS_DISTRO)
 
-curl $latest_release_url | tar xvz
-
 echo "Latest URL : $latest_release_url"
 
+mkdir -p $HOME/orocos_toolchain-install
+
+curl -L $latest_release_url | tar xvz -C $HOME/orocos_toolchain-install
 
 
-
+cd /root/catkin_ws
+catkin config --extend $HOME/orocos_toolchain-install
 
 
 
