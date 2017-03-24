@@ -11,7 +11,6 @@ latest_release_url=$(curl -s https://api.github.com/repos/ahoarau/orocos_toolcha
 echo "Latest URL : $latest_release_url"
 
 cd $HOME/catkin_ws
-catkin clean -y
 
 mkdir -p $HOME/catkin_ws/install
 
@@ -19,7 +18,7 @@ curl -L $latest_release_url | tar xz -C $HOME/catkin_ws/install
 # Avoid duplicates
 rm -r $HOME/catkin_ws/install/share/industrial_ci
 
-catkin config --extend $HOME/catkin_ws/install
+#catkin config --extend $HOME/catkin_ws/install
 
 echo "ROS env : $(env | grep ROS)"
 
