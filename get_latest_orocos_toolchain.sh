@@ -10,15 +10,15 @@ latest_release_url=$(curl -s https://api.github.com/repos/ahoarau/orocos_toolcha
 
 echo "Latest URL : $latest_release_url"
 
-mkdir -p $HOME/orocos_toolchain-install
+mkdir -p $HOME/catkin_ws/install
 
-curl -L $latest_release_url | tar xz -C $HOME/orocos_toolchain-install
+curl -L $latest_release_url | tar xz -C $HOME/catkin_ws/install
 
 cd /root/catkin_ws
-catkin config --extend $HOME/orocos_toolchain-install
+catkin config --extend $HOME/catkin_ws/install
 
 echo "ROS env : $(env | grep ROS)"
 
 echo "Before source : $ROS_PACKAGE_PATH"
-source $HOME/orocos_toolchain-install/setup.bash
+source $HOME/catkin_ws/install/setup.bash
 echo "After  source : $ROS_PACKAGE_PATH"
