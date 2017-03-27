@@ -20,6 +20,10 @@ env:
     - ROS_DISTRO="kinetic"
     - ROS_DISTRO="lunar"
 
+matrix:
+  allow_failures:
+    - env: ROS_DISTRO="lunar"
+
 install:
   - git clone https://github.com/ipa-mdl/industrial_ci -b fix/install-space .ci_config
 script:
