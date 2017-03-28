@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-latest_tag=$(curl -s https://api.github.com/repos/ahoarau/rtt_ros_integration-build/tags | grep name | head -n 1 | cut -d '"' -f 4)
+latest_tag=$(curl -s https://api.github.com/repos/ahoarau/rtt_ros_integration-build/releases | grep tag_name | head -n 1 | cut -d '"' -f 4)
 
 echo "Latest tag : $latest_tag"
 
