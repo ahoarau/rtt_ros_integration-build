@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-latest_tag=$(curl -s https://api.github.com/repos/ahoarau/orocos_toolchain-build/tags | grep name | head -n 1 | cut -d '"' -f 4)
+latest_tag=$(curl -s https://api.github.com/repos/ahoarau/orocos_toolchain-build/release | grep tag_name | head -n 1 | cut -d '"' -f 4)
 
 echo "Latest tag : $latest_tag"
 
@@ -18,10 +18,5 @@ curl -L $latest_release_url | tar xz -C $HOME/catkin_ws/install
 # Avoid duplicates
 rm -r $HOME/catkin_ws/install/share/industrial_ci
 
-#catkin config --extend $HOME/catkin_ws/install
-
-echo "ROS env : $(env | grep ROS)"
-
-echo "Before source : $ROS_PACKAGE_PATH"
 source $HOME/catkin_ws/install/setup.bash
-echo "After  source : $ROS_PACKAGE_PATH"
+
