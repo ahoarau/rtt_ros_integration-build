@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 set -e
 
 repo_url=https://api.github.com/repos/ahoarau/rtt_ros_integration-build/releases
@@ -29,4 +29,4 @@ curl -L $latest_release_url | tar xz -C $HOME/catkin_ws/install
 # Avoid duplicates
 rm -r $HOME/catkin_ws/install/share/industrial_ci
 
-source $HOME/catkin_ws/install/setup.bash
+. $HOME/catkin_ws/install/setup.bash
