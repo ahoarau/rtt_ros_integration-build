@@ -3,6 +3,10 @@ sudo: required
 dist: trusty
 language: generic
 
+branches:
+  only:
+  - master
+
 env:
   global:
     - UPSTREAM_WORKSPACE=https://raw.githubusercontent.com/kuka-isir/rtt_lwr/rtt_lwr-2.0/lwr_utils/config/rtt_ros_integration-2.9.rosinstall
